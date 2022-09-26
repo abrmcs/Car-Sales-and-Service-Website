@@ -1,0 +1,247 @@
+/* body styling */ 
+body
+{
+	margin: 0px;
+	padding: 0px;
+	background: antiquewhite;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 11pt;
+	font-weight: 300;
+	color: #6c6c6c
+}
+
+/*********************************************************************************/
+/* For car image */
+.car {
+    display: flex;
+    flex-flow: wrap;
+    padding: 1rem;
+}
+
+img {
+    border: 1px solid #d8d8d8;
+    width: 70%;
+    margin: 40px;
+    box-shadow: 0px .5px 1px #d8d8d8;
+}
+
+.car-image {
+    width: 80%;
+}
+
+.car-image,
+.car-info {
+    margin-top: 10px;
+    width: 50%;
+}
+
+.color-box {
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+/* For displaying contents in watchlist */
+
+.watchlist {
+    margin-right: 25px;
+    float: right;
+    border: 1px solid #d8d8d8;
+    padding: 5px 20px;
+    background-color:goldenrod; 
+    color: white;
+}
+/* Watchlist addition button */
+button {
+    margin-top: 30px;
+    border: none;
+    background-color: #ea1e1e;
+    color: white;
+    height: 60px;
+    width: 130px;
+    font-size: 14px;
+}
+
+/* For disabled watchlist if item sold out */
+
+.disabledButton {
+    background-color: #d8d8d8;
+}
+
+/*****************************************/
+/* Styling for review form */
+.review-form {
+    width: 400px;
+    padding: 20px;
+    margin: 40px;
+    border: 1px solid #d8d8d8;
+}
+
+input {
+    width: 100%;
+    height: 25px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 60px;
+}
+
+/***********************************/
+/* Menu and Navigation Bar styling */
+
+#menu {
+    position: absolute;
+    right: 0;
+    top: 1em;
+}
+
+#menu ul {
+    display: inline-block;
+}
+
+#menu li {
+    display: block;
+    float: left;
+    text-align: center;
+    line-height: 60px;
+}
+
+#menu li a,
+#menu li span {
+    display: inline-block;
+    margin-left: 1px;
+    padding: 0em 1.5em;
+    letter-spacing: 0.10em;
+    text-decoration: none;
+    font-size: 1em;
+    text-transform: uppercase;
+    outline: 0;
+    color: #212121;
+}
+
+#menu li:hover a {
+    background: goldenrod;
+    color: #FFF !important;
+}
+
+
+#menu li.current_page_item a {
+    background: goldenrod;
+    color: #FFF !important;
+}
+
+/* For header and header contents */
+
+#header-wrapper {
+
+    padding: 2em 0em;
+    background: #FFF;
+}
+
+#header {
+    position: relative;
+    height: 100px;
+}
+
+.container {
+
+    margin: 0px auto;
+    width: 1200px;
+}
+
+.contain {
+
+    margin: 0px auto;
+    width: 1120px;
+}
+
+/* Contact form styling */
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 5px;
+    background-color: bisque;
+    padding: 20px;
+    margin-top: 3%;
+}
+
+/* #logo
+{	
+	position:absolute;
+	top: 1.9em;
+	left: 0 em;
+	width: 100%;
+} */
+
+/****************************/
+/* Footer styling */
+
+#footer {
+    overflow: hidden;
+    padding: 5em 0em;
+    background: #c7c3bd;
+    text-align: center;
+}
+
+
+
+#footer .fbox1,
+#footer .fbox2,
+#footer .fbox3 {
+    float: left;
+    width: 320px;
+    padding: 0px 40px 0px 40px;
+}
+
+#footer .icon {
+    display: block;
+    margin-bottom: 1em;
+    font-size: 3em;
+}
+
+
+#footer .title span {
+    color: rgb(255, 255, 255);
+}
+
+/*********************************************************************************/
+/* Copyright                                                                     */
+/*********************************************************************************/
+
+#copyright {
+    overflow: hidden;
+    padding: 5em 0em;
+    border-top: 20px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+#copyright p {
+    letter-spacing: 1px;
+    font-size: 0.90em;
+    color: black(255, 255, 255, 0.6);
+}
+
+#copyright a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.pan2 img {  MAX-WIDTH:100PX;
+}
+
+/* For Transition effect */
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}

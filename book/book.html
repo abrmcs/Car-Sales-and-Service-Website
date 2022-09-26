@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Adapt to the width of screen. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ace Your Ride</title>
+  <link rel="stylesheet" href="house.css">
+</head>
+
+<!--header content-->
+<div id="header-wrapper">
+  <div id="header" class="container">
+  <!--Navigation Menu-->
+  <div id="menu">
+    <ul>
+      <li><a href="../home.html" accesskey="1" title="">Homepage</a></li>
+      <li><a href="../services/services.html" accesskey="2" title="">services</a></li>
+      <li><a href="../gallery/gallery.html" accesskey="3" title="">Gallery</a></li>
+      <li class="current_page_item"><a href="#" accesskey="4" title="">Book Ride</a></li>
+      <li><a href="../about us/about.html" accesskey="5" title="">Contact us</a></li>
+
+
+    </ul>
+  </div>
+</div>
+</div>
+
+<!--Displaying items in watchlist-->
+<div id="app">
+  <div class="watchlist">
+    <p>Watchlist({{ watchlist.length }})</p>
+  </div>
+  <car :premium="premium" @add-to-watchlist="updatewatchlist"></car>
+</div>
+
+<p style="text-align: center; font-size: 18px;">What are you waiting for? Fill out the form below now and get a call to
+  confirm your booking!
+  <!--Vue transition effect for showing special offer-->
+  <div id="trans" style="text-align: center">
+    <button @click="show = !show" style = "background-color:goldenrod; width:188px">
+      Click me for a special offer
+    </button>
+    <transition name="fade">
+      <p v-if="show" style="font-family: 'Source Sans Pro';font-size: 18px">Book today for a 10 % discount</p>
+    </transition>
+  </div>
+</p>
+
+
+<div id="contact">
+  <!-- Vue app for the contact form-->
+
+  <h1>Booking Form</h1>
+
+  <!-- First name value used in vue app-->
+  <label for="First Name">First Name</label>
+  <input id="Name" v-model="firstName" type="text" placeholder="Please enter your First Name">
+
+  <!-- Last  name value from the form used in vue app-->
+  <label for="Last Name">Last Name</label>
+  <input v-model="lastName" type="text" placeholder="Please enter your Last Name" />
+
+
+  <!-- email value from the form used in vue app-->
+  <label for="Date">Date you want to book the car</label>
+  <input v-model="date" type="date" placeholder="Please enter the date you want to book the car" />
+
+  <!-- Message value from the form used in vue app-->
+  <label for="Comments">Comments</label>
+  <textarea v-model="message" type="textarea" id="subject" name="subject" placeholder="Any further comments"
+    style="height:200px"></textarea>
+
+  <input onclick="showAlert() + done === true" type="submit" value="Submit" />
+
+  <script>
+    function showAlert() {
+      // displays a meessage to the user in a box 
+      alert("Booking Done! We shall contact you soon! Thank you")
+    }
+    const done = true
+  </script>
+
+
+
+
+</div>
+
+<br><br>
+<!--------------------------------FOOTER CONTENT---------------------------------------->
+<div id="footer">
+  <div class="container">
+    <div class="fbox1">
+      <span class="icon icon-map-marker"></span>
+      <div class="pan2">
+
+        <img src="../pic/11.png" />
+
+      </div>
+      <span>1234 1234 Lorem Street
+        <br />Lorem Ipsum Dolor Land 300720</span>
+    </div>
+    <div class="fbox1">
+      <span class="icon icon-phone"></span>
+      <div class="pan2">
+
+        <img src="../pic/12.png" />
+
+      </div>
+
+      <span>
+        Telephone: +61 0401231100
+      </span>
+    </div>
+    <div class="fbox1">
+      <span class="icon icon-envelope"></span>
+      <div class="pan2">
+
+        <img src="../pic/13.png" />
+
+      </div>
+      <span>aceyourride@cars.com</span>
+    </div>
+  </div>
+</div>
+
+
+<div id="copyright">
+  <p>&copy; Ace Your Ride. All rights reserved. | Designed and Handcrafted by Abraar & Abraar</p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="main.js"></script>
