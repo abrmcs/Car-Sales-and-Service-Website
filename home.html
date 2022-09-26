@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<!-- Adapt to the width of screen. -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Font Styling -->
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+	<link href="css.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+
+<body>
+	<!-- Header Content -->
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<!-- Logo Styling -->
+			<div id="logo">
+				<img src="images/logo.jpg" alt="AceYourRide" class="ar">
+				<!-- Logo created through https://logo.crazydomains.com.au/ -->
+			</div>
+			<!-- Menu and Navigation Bar -->
+			<div id="menu">
+				<ul>
+					<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+					<li><a href="services/services.html" accesskey="2" title="">services</a></li>
+					<li><a href="gallery/gallery.html" accesskey="3" title="">Gallery</a></li>
+					<li><a href="book/book.html" accesskey="4" title="">Book Ride</a></li>
+					<li><a href="about us/about.html" accesskey="5" title="">Contact us</a></li> 	
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- Sliding images on top of page -->
+	<div id="header-featured">
+		<div class="images">
+			<img class="mySlides" src="pic/1.jpg" style="width:100%">
+			<img class="mySlides" src="pic/2.jpg" style="width:100%">
+			<img class="mySlides" src="pic/3.jpg" style="width:100%">
+			<img class="mySlides" src="pic/4.jpg" style="width:100%">
+			<img class="mySlides" src="pic/5.jpg" style="width:100%">
+		</div>
+		<!-- script for sliding images -->
+		<script>
+			var myIndex = 0;
+			carousel();
+
+			function carousel() {
+				var i;
+				var x = document.getElementsByClassName("mySlides");
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";
+				}
+				myIndex++;
+				if (myIndex > x.length) { myIndex = 1 }
+				x[myIndex - 1].style.display = "block";
+				setTimeout(carousel, 2500);
+			}
+		</script>
+	</div>
+
+	<!--Wrapper for description -->
+	<div id="wrapper">
+
+		<div id="extra1" class="container">
+			<div class="title">
+				<h2>Welcome to our website</h2>
+			</div>
+			<p><b>Ace Your Ride offers a wide range of high-end cars for buying as well as rental. Our quality and
+					services are unmatched in Australia. Add to that our price, and you have an incredible bargain.
+				</b></p>
+			<p>Our Services include Awesome Modifications, Awe-Inspiring Paintjobs, Stunning Car Underglows and many
+				more.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in cursus sem, ac facilisis justo. Nulla
+				accumsan, diam eget finibus maximus, sapien nulla tincidunt felis, eu tincidunt metus purus sed lorem.
+				<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in cursus sem, ac facilisis justo.
+				Nulla accumsan, diam eget finibus maximus, sapien nulla tincidunt felis, eu tincidunt metus purus sed
+				lorem.
+			</p>
+			<!-- Link to Services -->
+			<a href="services/services.html" class="button">Learn More</a>
+		</div>
+		<div id="featured-wrapper">
+			<div id="featured" class="container">
+
+				<div class="column1">
+					<img src="images/GG.jpg" alt="CAR" class="az">
+				</div>
+
+				<div class="column2">
+					<div class="title">
+						<h2>OUR <b>MISSION STATEMENT<b></h2>
+					</div>
+					<p>Our aim is to get you the best cars in business at a price that is convenient. Ever faced trouble
+						buying or renting a car? Middleman Troubles? High Prices? Insurance Issues? We've got it all
+						covered for ya!<br /><br>
+						Our greatest quality: Customer Connection. We value you and your opinions. And that's what makes
+						us different from others.<br>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in cursus sem, ac facilisis justo.
+						Nulla accumsan, diam eget finibus maximus, sapien nulla tincidunt felis, eu tincidunt metus
+						purus sed lorem.
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Wrapper for features -->
+		<div id="page-wrapper">
+			<div id="extra3" class="container">
+				<div class="title">
+					<h2>Today's <b>best offers<b></h2>
+				</div>
+				<div class="tboxa">
+					<div class="padding-bottom">
+						<h2>Featured Luxury Cars</h2>
+						p>Ferarri F-40 | Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6<br />Ferarri F-40 |
+						Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6<br />Ferarri F-40 | Top Speed-180
+						mph<br />300-hp supercharged 3.0-liter V-6<br /><br />
+						</p>
+					</div>
+					<div class="padding-bottom">
+						<h2>Insurance Included</h2>
+						p>Ferarri F-40 | Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6<br />Ferarri F-40 |
+						Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6<br />Ferarri F-40 | Top Speed-180
+						mph<br />300-hp supercharged 3.0-liter V-6<br /><br />
+						</p>
+					</div>
+
+					<h2>Family SUVs available</h2>
+					p>Ferarri F-40 | Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6<br />Ferarri F-40 | Top
+					Speed-180 mph<br />300-hp supercharged 3.0-liter V-6<br />Ferarri F-40 | Top Speed-180
+					mph<br />300-hp supercharged 3.0-liter V-6<br /><br />
+					</p>
+
+
+				</div>
+				<div class="tboxc">
+					<div class="padding-bottom">
+
+						<img src="images/offer.jpg" alt="car" />
+
+					</div>
+
+				</div>
+				<div class="tboxb">
+					<div class="padding-bottom">
+						<h2>Rent Anywhere in Australia</h2>
+						p>Ferarri F-40 | Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6<br />Ferarri F-40 |
+						Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6<br />Ferarri F-40 | Top Speed-180
+						mph<br />300-hp supercharged 3.0-liter V-6<br /><br />
+						</p>
+					</div>
+					<div class="padding-bottom">
+						<h2>Servicing Included</h2>
+						p>Ferarri F-40 | Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6<br />Ferarri F-40 |
+						Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6<br />Ferarri F-40 | Top Speed-180
+						mph<br />300-hp supercharged 3.0-liter V-6<br /><br />
+						</p>
+					</div>
+
+					<h2>Online 24 / 7 Support</h2>
+					p>Ferarri F-40 | Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6<br />Ferarri F-40 | Top
+					Speed-180 mph<br />300-hp supercharged 3.0-liter V-6<br />Ferarri F-40 | Top Speed-180
+					mph<br />300-hp supercharged 3.0-liter V-6<br /><br />
+					</p>
+
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Wrapper for About Us with link to Contact Page-->
+		<div id="extra" class="container">
+			<h2>about us</h2>
+			<span>Lorem ipsum dolor sit amet</span>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in cursus sem, ac facilisis justo. Nulla
+				accumsan, diam eget finibus maximus, sapien nulla tincidunt felis, eu tincidunt metus purus sed lorem.
+				Maecenas vulputate enim sem, vitae feugiat odio hendrerit at. Donec lacinia et risus vel blandit. Nam
+				eget sem tellus. Donec id ipsum rutrum, mattis lectus sit amet, auctor nisi. Donec auctor efficitur
+				tincidunt. Aenean auctor elit eget pretium eleifend. Nunc lectus tellus, dignissim vel volutpat sed,
+				pulvinar lacinia nunc. Maecenas elementum urna in aliquam viverra.</p>
+
+			<a href="about us/about.html" class="button">Learn More</a>
+		</div>
+
+
+	</div>
+
+	<!-- Wrapper for featured cars along with link to Book Ride Page -->
+	<div id="page-wrapper">
+		<div id="extra2" class="contain">
+			<div class="title">
+				<h2>meet our fleet</h2>
+			</div>
+			<div class="tbox1">
+				<div class="padding-bottom">
+					<h2>Car Name Lorem</h2>
+					<img src="images/img01.jpg" alt="" />
+					<p>Ferarri F-40 | Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6</p>
+					<a href="book/book.html" class="button">book now</a>
+				</div>
+				<div>
+					<h2>Car Name Lorem</h2>
+					<img src="images/u.jpg" alt="" />
+					<p>Ferarri F-40 | Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6</p>
+					<a href="book/book.html" class="button">book now</a>
+				</div>
+			</div>
+			<div class="tbox2">
+				<div class="padding-bottom">
+					<h2>Car Name Lorem</h2>
+					<img src="images/z.jpg" alt="" />
+					<p>Ferarri F-40 | Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6</p>
+					<a href="book/book.html" class="button">book now</a>
+				</div>
+				<div>
+					<h2>Car Name Lorem</h2>
+					<img src="images/w.jpg" alt="" />
+					<p>Ferarri F-40 | Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6</p>
+					<a href="book/book.html" class="button">book now</a>
+				</div>
+			</div>
+			<div class="tbox3">
+				<div class="padding-bottom">
+					<h2>Car Name Lorem</h2>
+					<img src="images/x.jpg" alt="" />
+					<p>Ferarri F-40 | Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6</p>
+					<a href="book/book.html" class="button">book now</a>
+				</div>
+				<div>
+					<h2>Car Name Lorem</h2>
+					<img src="images/y.jpg" alt="" />
+					<p>Ferarri F-40 | Top Speed-180 mph<br />300-hp supercharged 3.0-liter V-6</p>
+					<a href="book/book.html" class="button">book now</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer Content -->
+	<div id="footer">
+		<div class="container">
+			<div class="fbox1">
+				<span class="icon icon-map-marker"></span>
+				<div class="pan2">
+
+					<img src="pic/11.png" />
+
+				</div>
+				<span>1234 1234 Lorem Street
+					<br />Lorem Ipsum Dolor Land 300720</span>
+			</div>
+			<div class="fbox1">
+				<span class="icon icon-phone"></span>
+				<div class="pan2">
+
+					<img src="pic/12.png" />
+
+				</div>
+
+				<span>
+					Telephone: +61 0401231100
+				</span>
+			</div>
+			<div class="fbox1">
+				<span class="icon icon-envelope"></span>
+				<div class="pan2">
+
+					<img src="pic/13.png" />
+
+				</div>
+				<span>aceyourride@cars.com</span>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="copyright">
+		<p>&copy; Ace Your Ride. All rights reserved. | Designed and Handcrafted by Abraar & Abraar</p>
+
+	</div>
+
+</body>
+
+</html>
