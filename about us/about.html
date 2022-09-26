@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Adapt to the width of screen. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ace Your Ride</title>
+    <link rel="stylesheet" href="about.css">
+    <script src="about.js"></script>
+    <script src="https://unpkg.com/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<!-- header content -->
+<div id="header-wrapper">
+    <div id="header" class="container">
+  <!--Navigation Menu-->
+  <div id="menu">
+        <ul>
+            <li><a href="../home.html" accesskey="1" title="">Homepage</a></li>
+            <li><a href="../services/services.html" accesskey="2" title="">services</a></li>
+            <li><a href="../gallery/gallery.html" accesskey="3" title="">Gallery</a></li>
+            <li><a href="../book/book.html" accesskey="4" title="">Book Ride</a></li>
+            <li class="current_page_item"><a href="#" accesskey="5" title="">Contact Us</a></li>
+
+        </ul>
+    </div>
+</div>
+</div>
+
+<body>
+    <p style="font-size: 26px; text-align: center"><b> Contact Us </b></p>
+    <p class=para>
+        We are here to help you 24/7. Just give us a call, an email or even a text, and we'll have your back.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin orci turpis, posuere tempus nisl et, ultricies
+        consectetur felis. Fusce malesuada tincidunt magna eget tincidunt. Phasellus condimentum ligula nulla, pharetra
+        facilisis leo egestas eu. Donec in posuere ligula. Ut aliquet, justo vel malesuada pharetra, eros ante tristique
+        libero, eu condimentum nulla mi ac ex. Donec dignissim consectetur lectus eu suscipit. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed vitae lacus eget enim elementum hendrerit
+        nec facilisis mauris. Duis faucibus augue nec dui accumsan luctus. Phasellus eget felis porta, congue elit et,
+        commodo est. Aenean massa tellus, mollis ut sapien eget, feugiat vestibulum nisl.
+        <br><br>To help you with the most common queries we get, here's a table.
+    </p>
+
+    </div>
+
+    <!--dynamic component for three tabs -->
+    <div id="dyncomp">
+        <button v-for="tab in tabs" v-bind:key="tab" v-bind:class="['tab-button', { active: currentTab === tab }]"
+            v-on:click="currentTab = tab">
+            {{ tab }}
+        </button>
+        <!-- Keep alive the section selected -->
+        <keep-alive>
+            <component v-bind:is="currentTabComponent" class="tab"></component>
+        </keep-alive>
+    </div>
+
+    <script>
+        //Vue component for the buying tab.
+        //It has 3 sections, each with a description
+        Vue.component("tab-buying", {
+            data: function () {
+                return {
+                    buying: [
+                        {
+                            id: 1,
+                            title: "Discounts and Subcharges",
+                            content:
+                                "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin orci turpis, posuere tempus nisl et, ultricies consectetur felis. Fusce malesuada tincidunt magna eget tincidunt. Phasellus condimentum ligula nulla, pharetra facilisis leo egestas eu. Donec in posuere ligula. Ut aliquet, justo vel malesuada pharetra, eros ante tristique libero, eu condimentum nulla mi ac ex. Donec dignissim consectetur lectus eu suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed vitae lacus eget enim elementum hendrerit nec facilisis mauris. Duis faucibus augue nec dui accumsan luctus. Phasellus eget felis porta, congue elit et, commodo est. Aenean massa tellus, mollis ut sapien eget, feugiat vestibulum nisl.</p>"
+                        },
+                        {
+                            id: 2,
+                            title: "Car Servicing",
+                            content:
+                                "<p>Nullam erat felis, pellentesque id dui vitae, convallis ultricies risus. Praesent interdum ligula facilisis, tristique lacus non, congue dolor. Proin imperdiet nisl ut vulputate aliquet. Aenean pulvinar elit non odio mattis, sed fermentum neque feugiat. Integer quis lacus sit amet mi sagittis condimentum. Nullam vel neque elementum ligula consectetur facilisis. Curabitur blandit massa at nunc cursus, at tincidunt purus convallis. Cras tempus imperdiet luctus. Curabitur malesuada arcu a ultrices dapibus. Mauris quis consequat dolor. Sed hendrerit aliquet leo, ut tincidunt est ullamcorper in.</p>"
+                        },
+                        {
+                            id: 3,
+                            title: "Reservation Policy",
+                            content:
+                                "<p>Icing dessert soufflé lollipop chocolate bar sweet tart cake chupa chups. Soufflé marzipan jelly beans croissant toffee marzipan cupcake icing fruitcake. Muffin cake pudding soufflé wafer jelly bear claw sesame snaps marshmallow. Marzipan soufflé croissant lemon drops gingerbread sugar plum lemon drops apple pie gummies. Sweet roll donut oat cake toffee cake. Liquorice candy macaroon toffee cookie marzipan.</p>"
+                        }
+                    ],
+                    selectedPost: null
+                };
+            },
+            template: `
+  	<div class="posts-tab">
+      <ul class="posts-sidebar">
+        <li
+          v-for="post in buying"
+          v-bind:key="post.id"
+          v-bind:class="{ selected: post === selectedPost }"
+					v-on:click="selectedPost = post"
+        >
+          {{ post.title }}
+        </li>
+      </ul>
+      <div class="selected-post-container">
+      	<div
+        	v-if="selectedPost"
+          class="selected-post"
+        >
+          <h3>{{ selectedPost.title }}</h3>
+          <div v-html="selectedPost.content"></div>
+        </div>
+        <strong v-else>
+          Click on a title to view 
+        </strong>
+      </div>
+    </div>
+  `
+        });
+
+        //Vue component for the service tab.
+        //It has 3 sections, each with a description
+        Vue.component("tab-service", {
+            data: function () {
+                return {
+                    service: [
+                        {
+                            id: 1,
+                            title: "Paint Jobs",
+                            content:
+                                "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin orci turpis, posuere tempus nisl et, ultricies consectetur felis. Fusce malesuada tincidunt magna eget tincidunt. Phasellus condimentum ligula nulla, pharetra facilisis leo egestas eu. Donec in posuere ligula. Ut aliquet, justo vel malesuada pharetra, eros ante tristique libero, eu condimentum nulla mi ac ex. Donec dignissim consectetur lectus eu suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed vitae lacus eget enim elementum hendrerit nec facilisis mauris. Duis faucibus augue nec dui accumsan luctus. Phasellus eget felis porta, congue elit et, commodo est. Aenean massa tellus, mollis ut sapien eget, feugiat vestibulum nisl.</p>"
+                        },
+                        {
+                            id: 2,
+                            title: "Car Modifications",
+                            content:
+                                "<p>Nullam erat felis, pellentesque id dui vitae, convallis ultricies risus. Praesent interdum ligula facilisis, tristique lacus non, congue dolor. Proin imperdiet nisl ut vulputate aliquet. Aenean pulvinar elit non odio mattis, sed fermentum neque feugiat. Integer quis lacus sit amet mi sagittis condimentum. Nullam vel neque elementum ligula consectetur facilisis. Curabitur blandit massa at nunc cursus, at tincidunt purus convallis. Cras tempus imperdiet luctus. Curabitur malesuada arcu a ultrices dapibus. Mauris quis consequat dolor. Sed hendrerit aliquet leo, ut tincidunt est ullamcorper in.</p>"
+                        },
+                        {
+                            id: 3,
+                            title: "Rim Jobs",
+                            content:
+                                "<p>Icing dessert soufflé lollipop chocolate bar sweet tart cake chupa chups. Soufflé marzipan jelly beans croissant toffee marzipan cupcake icing fruitcake. Muffin cake pudding soufflé wafer jelly bear claw sesame snaps marshmallow. Marzipan soufflé croissant lemon drops gingerbread sugar plum lemon drops apple pie gummies. Sweet roll donut oat cake toffee cake. Liquorice candy macaroon toffee cookie marzipan.</p>"
+                        }
+                    ],
+                    selectedPost: null
+                };
+            },
+            template: `
+  	<div class="posts-tab">
+      <ul class="posts-sidebar">
+        <li
+          v-for="post in service"
+          v-bind:key="post.id"
+          v-bind:class="{ selected: post === selectedPost }"
+					v-on:click="selectedPost = post"
+        >
+          {{ post.title }}
+        </li>
+      </ul>
+      <div class="selected-post-container">
+      	<div
+        	v-if="selectedPost"
+          class="selected-post"
+        >
+          <h3>{{ selectedPost.title }}</h3>
+          <div v-html="selectedPost.content"></div>
+        </div>
+        <strong v-else>
+          Click on a title to view 
+        </strong>
+      </div>
+    </div>
+  `
+        });
+
+        //Vue component for the rent tab.
+        //It has 3 sections, each with a description
+        Vue.component("tab-rent", {
+            data: function () {
+                return {
+                    rent: [
+                        {
+                            id: 1,
+                            title: "$ per km",
+                            content:
+                                "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin orci turpis, posuere tempus nisl et, ultricies consectetur felis. Fusce malesuada tincidunt magna eget tincidunt. Phasellus condimentum ligula nulla, pharetra facilisis leo egestas eu. Donec in posuere ligula. Ut aliquet, justo vel malesuada pharetra, eros ante tristique libero, eu condimentum nulla mi ac ex. Donec dignissim consectetur lectus eu suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed vitae lacus eget enim elementum hendrerit nec facilisis mauris. Duis faucibus augue nec dui accumsan luctus. Phasellus eget felis porta, congue elit et, commodo est. Aenean massa tellus, mollis ut sapien eget, feugiat vestibulum nisl.</p>"
+                        },
+                        {
+                            id: 2,
+                            title: "Insurance Policy",
+                            content:
+                                "<p>Nullam erat felis, pellentesque id dui vitae, convallis ultricies risus. Praesent interdum ligula facilisis, tristique lacus non, congue dolor. Proin imperdiet nisl ut vulputate aliquet. Aenean pulvinar elit non odio mattis, sed fermentum neque feugiat. Integer quis lacus sit amet mi sagittis condimentum. Nullam vel neque elementum ligula consectetur facilisis. Curabitur blandit massa at nunc cursus, at tincidunt purus convallis. Cras tempus imperdiet luctus. Curabitur malesuada arcu a ultrices dapibus. Mauris quis consequat dolor. Sed hendrerit aliquet leo, ut tincidunt est ullamcorper in.</p>"
+                        },
+                        {
+                            id: 3,
+                            title: "24/7 Breakdown Service",
+                            content:
+                                "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin orci turpis, posuere tempus nisl et, ultricies consectetur felis. Fusce malesuada tincidunt magna eget tincidunt. Phasellus condimentum ligula nulla, pharetra facilisis leo egestas eu. Donec in posuere ligula. Ut aliquet, justo vel malesuada pharetra, eros ante tristique libero, eu condimentum nulla mi ac ex. Donec dignissim consectetur lectus eu suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed vitae lacus eget enim elementum hendrerit nec facilisis mauris. Duis faucibus augue nec dui accumsan luctus. Phasellus eget felis porta, congue elit et, commodo est. Aenean massa tellus, mollis ut sapien eget, feugiat vestibulum nisl.</p>"
+                        }
+                    ],
+                    selectedPost: null
+                };
+            },
+            template: `
+  	<div class="posts-tab">
+      <ul class="posts-sidebar">
+        <li
+          v-for="post in rent"
+          v-bind:key="post.id"
+          v-bind:class="{ selected: post === selectedPost }"
+					v-on:click="selectedPost = post"
+        >
+          {{ post.title }}
+        </li>
+      </ul>
+      <div class="selected-post-container">
+      	<div
+        	v-if="selectedPost"
+          class="selected-post"
+        >
+          <h3>{{ selectedPost.title }}</h3>
+          <div v-html="selectedPost.content"></div>
+        </div>
+        <strong v-else>
+          Click on a title to view 
+        </strong>
+      </div>
+    </div>
+  `
+        });
+        // Vue app for the dynamic components of tabs 
+        //Keep alive the section selected 
+        new Vue({
+            el: "#dyncomp",
+            data: {
+                currentTab: "Buying",
+                tabs: ["Buying", "Rent", "Service"]
+            },
+            computed: {
+                currentTabComponent: function () {
+                    return "tab-" + this.currentTab.toLowerCase();
+                }
+            }
+        });
+    </script>
+    <br><br>
+    <p class="para">
+        At AceYourRide, we truly value your opinion! We wish to know what makes our customers happy, and we love
+        constructive feedback.
+        Here's a form you can fill if you wish to give us some feedback, or want to contact us regarding a service.
+    </p>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <div id="contact">
+        <!-- Vue app for the contact form-->
+
+        <h1>Feedback Form</h1>
+
+        <!--first name from <v-model>-->
+        <label for="First Name">First Name</label>
+        <input id="Name" v-model="firstName" type="text" placeholder="Please enter your First Name">
+
+        <!-- last name from v-model-->
+        <label for="Last Name">Last Name</label>
+        <input v-model="lastName" type="text" placeholder="Please enter your Last Name" />
+
+
+        <!-- date from v-model-->
+        <label for="Date">Date you used/expecting to use our services</label>
+        <input v-model="date" type="date" />
+        <!--Vue filter for displaying current date to customer-->
+        <div id="date">
+            Today's date: {{new Date() | localeString}}
+        </div>
+        <script>
+            //Vue filter to return current date
+            Vue.filter("localeString", function (value) {
+                if (value instanceof Date) {
+                    return value.toLocaleDateString();
+                }
+                return value;
+            });
+            //Vue app for the date
+            new Vue({
+                el: "#date",
+            });
+            
+        </script>
+        <br>
+
+        <!-- Message value from v-model-->
+        <label for="Feedback/Message">Comments</label>
+        <textarea v-model="message" type="textarea" id="subject" name="subject"
+            placeholder="Feedback or Message you want to give us" style="height:200px"></textarea>
+
+        <input onclick="showAlert() + done === true" type="submit" value="Submit" />
+
+        <script>
+            function showAlert() {
+                // showing the confirmation to user
+                alert("Message Sent. Thank you!")
+            }
+            const done = true
+        </script>
+
+
+
+    </div>
+
+</body>
+<br><br>
+
+<!--------------------------------FOOTER CONTENT---------------------------------------->
+
+<div id="footer">
+    <div class="container">
+        <div class="fbox1">
+            <span class="icon icon-map-marker"></span>
+            <div class="pan2">
+
+                <img src="../pic/11.png" />
+
+            </div>
+            <span>1234 1234 Lorem Street
+                <br />Lorem Ipsum Dolor Land 300720</span>
+        </div>
+        <div class="fbox1">
+            <span class="icon icon-phone"></span>
+            <div class="pan2">
+
+                <img src="../pic/12.png" />
+
+            </div>
+
+            <span>
+                Telephone: +61 0401231100
+            </span>
+        </div>
+        <div class="fbox1">
+            <span class="icon icon-envelope"></span>
+            <div class="pan2">
+
+                <img src="../pic/13.png" />
+
+            </div>
+            <span>aceyourride@cars.com</span>
+        </div>
+    </div>
+</div>
+
+
+<div id="copyright">
+    <p>&copy; Ace Your Ride. All rights reserved. | Designed and Handcrafted by Abraar & Abraar</p>
+
+</div>
+
+</body>
+
+</html>
+
+</html>
+
+
+</html>
